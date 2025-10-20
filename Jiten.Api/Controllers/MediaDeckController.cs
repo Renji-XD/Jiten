@@ -361,6 +361,9 @@ public class MediaDeckController(
             "releaseDate" => sortOrder == SortOrder.Ascending
                 ? query.OrderBy(d => d.ReleaseDate)
                 : query.OrderByDescending(d => d.ReleaseDate),
+            "addedDate" => sortOrder == SortOrder.Ascending
+                ? query.OrderBy(d => d.CreationDate)
+                : query.OrderByDescending(d => d.CreationDate),
             "subdeckCount" => sortOrder == SortOrder.Ascending
                 ? query.OrderBy(d => d.Children.Count)
                 : query.OrderByDescending(d => d.Children.Count),
