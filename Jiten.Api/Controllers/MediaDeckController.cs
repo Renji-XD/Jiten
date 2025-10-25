@@ -1323,7 +1323,7 @@ public class MediaDeckController(
             foreach (char c in text)
             {
                 // Escape markdown/meta characters but leave slashes and colons for URLs
-                if (c is '*' or '_' or '~' or '`' or '>' or '|' or '[' or ']' or '(' or ')' or '@' or '#' or ':')
+                if (c is '*' or '_' or '~' or '`' or '>' or '|' or '[' or ']' or '(' or ')' or '@' or '#' or ':' or '"')
                 {
                     sb.Append('\\');
                 }
