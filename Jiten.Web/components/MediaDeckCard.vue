@@ -212,7 +212,7 @@
                   <Button as="router-link" :to="`/decks/media/${deck.deckId}/vocabulary`" label="View vocabulary" class="" />
                   <Button label="Download deck" class="" @click="showDownloadDialog = true" />
                   <Button v-if="!isCompact && displayAdminFunctions" as="router-link" :to="`/dashboard/media/${deck.deckId}`" label="Edit" class="" />
-                  <Button v-if="!isCompact && authStore.isAuthenticated" @click="showIssueDialog = true" label=" Report an issue"class="pi pi-exclamation-triangle " />
+                  <Button v-if="!isCompact && authStore.isAuthenticated" @click="showIssueDialog = true" label=" Report an issue" icon="pi pi-exclamation-triangle"/>
                 </div>
               </div>
             </div>
