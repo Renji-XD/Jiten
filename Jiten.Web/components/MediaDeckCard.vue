@@ -72,7 +72,7 @@
                   <div class="text-gray-600 dark:text-gray-300 truncate pr-2 font-medium">Coverage</div>
                   <div
                     v-tooltip="`${((deck.wordCount * deck.coverage) / 100).toFixed(0)} / ${deck.wordCount}`"
-                    class="relative w-full bg-gray-400 dark:bg-gray-700 rounded-lg h-6"
+                    class="relative w-full bg-gray-400 dark:bg-gray-700 rounded-lg h-6 overflow-hidden"
                   >
                     <div class="bg-purple-500 h-6 rounded-lg transition-all duration-700" :style="{ width: deck.coverage.toFixed(1) + '%' }"></div>
                     <span class="absolute inset-0 flex items-center pl-2 text-xs font-bold text-white dark:text-white"> {{ deck.coverage.toFixed(1) }}% </span>
@@ -82,7 +82,7 @@
                   <div class="text-gray-600 dark:text-gray-300 truncate pr-2 font-medium">Unique coverage</div>
                   <div
                     v-tooltip="`${((deck.uniqueWordCount * deck.uniqueCoverage) / 100).toFixed(0)} / ${deck.uniqueWordCount}`"
-                    class="relative w-full bg-gray-400 dark:bg-gray-700 rounded-lg h-6"
+                    class="relative w-full bg-gray-400 dark:bg-gray-700 rounded-lg h-6 overflow-hidden"
                   >
                     <div class="bg-purple-500 h-6 rounded-lg transition-all duration-700" :style="{ width: deck.uniqueCoverage.toFixed(1) + '%' }"></div>
                     <span class="absolute inset-0 flex items-center pl-2 text-xs font-bold text-white dark:text-white">
