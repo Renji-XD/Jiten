@@ -4,6 +4,7 @@ using Jiten.Core.Data.Providers;
 using Jiten.Core.Data.User;
 using Microsoft.EntityFrameworkCore;
 using Hangfire;
+using Jiten.Cli;
 
 namespace Jiten.Api.Jobs;
 
@@ -30,6 +31,16 @@ public class ParseJob(JitenDbContext context, UserDbContext userContext, IBackgr
                 if (string.IsNullOrEmpty(text))
                 {
                     throw new Exception("No text found in the ebook.");
+                }
+            }
+            else if (Path.GetExtension(filePath).ToLower() == ".mokuro")
+            {
+                var extractor = new MokuroExtractor();
+                text = await extractor.Extract(filePath, false);
+
+                if (string.IsNullOrEmpty(text))
+                {
+                    throw new Exception("No text found in the mokuro file.");
                 }
             }
             else
